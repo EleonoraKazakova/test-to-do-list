@@ -1,0 +1,28 @@
+.welcomePage-block {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.welcomePage-logo {
+  width: 300px;
+}
+
+.welcomePage-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcomePage-title {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.welcomePage-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
