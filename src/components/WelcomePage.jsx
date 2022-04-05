@@ -1,7 +1,7 @@
 import "../styles/welcomePage.css";
 import HomeImg from "../images/home-img.png";
 
-export default function WelcomePage() {
+export default function WelcomePage({ setOpenModal }) {
   return (
     <div>
       <img src={HomeImg} className="welcomePage-logo" />
@@ -14,6 +14,7 @@ export default function WelcomePage() {
           <p>You can click on the button and add orders.</p>
         </div>
       </div>
+      <button onClick={() => setOpenModal(true)}>Add item</button>
     </div>
   );
 }
