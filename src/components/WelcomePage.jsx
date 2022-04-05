@@ -1,7 +1,8 @@
 import "../styles/welcomePage.css";
 import HomeImg from "../images/home-img.png";
+import ModalForm from "./ModalForm";
 
-export default function WelcomePage({ setOpenModal }) {
+export default function WelcomePage({ setOpenModal, modalState, createdItem }) {
   return (
     <div>
       <img src={HomeImg} className="welcomePage-logo" />

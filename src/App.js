@@ -4,6 +4,7 @@ import "./styles/app.css";
 import WelcomePage from "./components/WelcomePage";
 import ShoppingList from "./components/ShoppingList";
 import ModalForm from "./components/ModalForm";
+import ModalWindow from "./components/ModalWindow";
 
 export default function App() {
   const [itemsList, setItemsList] = useState([]);
@@ -27,17 +28,31 @@ export default function App() {
       </header>
 
       <main className="app-content">
-        {itemsList.length === 0 && <WelcomePage setOpenModal={setOpenModal} />}
+        {itemsList.length === 0 && (
+          <WelcomePage
+            setOpenModal={setOpenModal}
+            modalState={[openModal, setOpenModal]}
+            createdItem={createdItem}
+          />
+        )}
         {itemsList.length > 0 && (
           <ShoppingList
             itemsListState={[itemsList, setItemsList]}
             setOpenModal={setOpenModal}
           />
         )}
-        <ModalForm
+
+        <ModalWindow open={openModal} onClose={() => setOpenModal(false)}>
+          <ModalForm
+            createdItem={createdItem}
+            modalState={[openModal, setOpenModal]}
+          />
+        </ModalWindow>
+
+        {/*<ModalForm
           createdItem={createdItem}
           modalState={[openModal, setOpenModal]}
-        />
+        />*/}
       </main>
 
       <footer className="app-footer">
