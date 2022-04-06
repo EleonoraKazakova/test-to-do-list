@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import "../styles/modalWindow.css";
 
-export default function ModalWindow({ open, onClose, children }) {
+export default function ModalWindow({ open, children }) {
   if (!open) return null;
 
   return ReactDOM.createPortal(
