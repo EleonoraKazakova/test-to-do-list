@@ -11,6 +11,7 @@
     transform: translate(-50%, -50%);
     background-color: rgb(234, 234, 234);
     z-index: 1000;
+    border-radius: 20px;
   }
 
   .modal-mark {
@@ -36,6 +37,7 @@
     transform: translate(-50%, -50%);
     background-color: rgb(234, 234, 234);
     z-index: 1000;
+    border-radius: 20px;
   }
 
   .modal-mark {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/modalForm.css";
+//import "../styles/base/button.css";
 
 export default function ModalForm({ createdItem, modalState }) {
   const [openModal, setOpenModal] = modalState;
@@ -33,28 +34,35 @@ export default function ModalForm({ createdItem, modalState }) {
   return (
     <form onSubmit={(event) => onSubmit(event)}>
       <div className="modalForm-items">
-        <label>
-          <input
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            required
-            className="modalForm-text"
-            placeholder="Write item"
-          />
-        </label>
-
-        <label>
-          <input
-            onChange={(e) => toogleError(e.target.value)}
-            type="text"
-            required
-            className="modalForm-text"
-            placeholder="Write price"
-          />
-        </label>
-        {showErrorMessage ? (
-          <p className="inputForm-message">You need to write the right price</p>
-        ) : null}
+        <div className="modalForm-label-block">
+          <label className="modalForm-label">
+            Item
+            <input
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              required
+              className="modalForm-text"
+              placeholder="Ex.: ice cream"
+            />
+          </label>
+        </div>
+        <div className="modalForm-label-block">
+          <label className="modalForm-label">
+            Price
+            <input
+              onChange={(e) => toogleError(e.target.value)}
+              type="text"
+              required
+              className="modalForm-text"
+              placeholder="Ex.: $5"
+            />
+          </label>
+          {showErrorMessage ? (
+            <p className="modalForm-message">
+              You need to write the right price
+            </p>
+          ) : null}
+        </div>
         <button>Submit</button>
         <button onClick={clearForm}>Cancel</button>
       </div>
