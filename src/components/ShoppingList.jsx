@@ -23,6 +23,8 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
       <div className="shopingList-line" key={item.id}>
         <input
           type="checkbox"
+          name="itemChecked"
+          data-testid="itemChecked"
           checked={item.isCompleted}
           onChange={() => toggleChecked(item)}
         />
@@ -40,11 +42,12 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
         <div>
           <input
             type="checkbox"
-            name="sort"
+            name="hide"
+            data-testid="hide"
             checked={checkedHide}
             onChange={toggleCheckedHide}
           />
-          <label key="sort">Hide completed items</label>
+          <label key="hide">Hide completed items</label>
         </div>
       </div>
       {items}

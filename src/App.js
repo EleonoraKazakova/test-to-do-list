@@ -32,7 +32,6 @@ export default function App() {
       id: itemsList.length,
       name: name,
       price: price,
-      imgURL: "",
       isCompleted: false,
     };
     setItemsList([...itemsList, newItem]);
