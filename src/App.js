@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "./images/logo.png";
 import "./styles/app.css";
 import WelcomePage from "./components/WelcomePage";
@@ -9,6 +9,23 @@ import ModalWindow from "./components/ModalWindow";
 export default function App() {
   const [itemsList, setItemsList] = useState([]);
   const [openModal, setOpenModal] = useState(false);
+
+  const storageKey = "todo-list";
+
+  useEffect(() => loadData(), []);
+  useEffect(() => saveData(), [itemsList]);
+
+  function loadData() {
+    const data = localStorage.getItem(storageKey);
+    const parseData = JSON.parse(data) || [];
+
+    setItemsList(parseData);
+  }
+
+  function saveData() {
+    const data = JSON.stringify(itemsList);
+    localStorage.setItem(storageKey, data);
+  }
 
   function createdItem(name, price) {
     const newItem = {
@@ -48,11 +65,6 @@ export default function App() {
             modalState={[openModal, setOpenModal]}
           />
         </ModalWindow>
-
-        {/*<ModalForm
-          createdItem={createdItem}
-          modalState={[openModal, setOpenModal]}
-        />*/}
       </main>
 
       <footer className="app-footer">
