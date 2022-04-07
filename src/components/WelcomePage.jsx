@@ -1,6 +1,6 @@
 import "../styles/welcomePage.css";
 import HomeImg from "../images/home-img.png";
-import ModalForm from "./ModalForm";
+import "../styles/base/button.css";
 
 export default function WelcomePage({ setOpenModal, modalState, createdItem }) {
   return (
@@ -15,7 +15,9 @@ export default function WelcomePage({ setOpenModal, modalState, createdItem }) {
           <p>You can click on the button and add orders.</p>
         </div>
       </div>
-      <button onClick={() => setOpenModal(true)}>Add item</button>
+      <button onClick={() => setOpenModal(true)} className="button">
+        <p className="button-text">Add item</p>
+      </button>
     </div>
   );
 }
