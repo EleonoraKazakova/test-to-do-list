@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../styles/shoppingList.css";
+import "../styles/base/button.css";
+import Sorting from "./Sorting";
 
 export default function ShoppingList({ itemsListState, setOpenModal }) {
   const [itemsList, setItemsList] = itemsListState;
@@ -8,7 +10,7 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
   function toggleCheckedHide() {
     setCheckedHide(!checkedHide);
   }
-  console.log("checkedHide:", checkedHide);
+
   function toggleChecked(item) {
     const clonedItem = { ...item };
     clonedItem.isCompleted = !clonedItem.isCompleted;
@@ -49,9 +51,12 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
           />
           <label key="hide">Hide completed items</label>
         </div>
+        <Sorting itemsListState={[itemsList, setItemsList]} />
       </div>
       {items}
-      <button onClick={() => setOpenModal(true)}>Add Item</button>
+      <button onClick={() => setOpenModal(true)} className="button">
+        Add Item
+      </button>
     </div>
   );
 }

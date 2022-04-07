@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/modalForm.css";
-//import "../styles/base/button.css";
+import "../styles/base/button.css";
 
 export default function ModalForm({ createdItem, modalState }) {
   const [openModal, setOpenModal] = modalState;
@@ -63,8 +63,12 @@ export default function ModalForm({ createdItem, modalState }) {
             </p>
           ) : null}
         </div>
-        <button>Submit</button>
-        <button onClick={clearForm}>Cancel</button>
+        <button className="button">
+          <p className="button-text">Submit</p>
+        </button>
+        <button onClick={clearForm} className="button">
+          <p className="button-text"> Cancel</p>
+        </button>
       </div>
     </form>
   );
