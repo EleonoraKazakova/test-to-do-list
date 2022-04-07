@@ -3,6 +3,24 @@ import "@testing-library/jest-dom";
 import ShoppingList from "../components/ShoppingList";
 
 const fakeOpenModal = jest.fn();
+const fakeItemsListStateTrue = [
+  [
+    {
+      id: 0,
+      name: "peach",
+      price: "7",
+      isCompleted: true,
+    },
+  ],
+  jest.fn(),
+];
+const renderedCheckedItemsList = (
+  <ShoppingList
+    itemsListState={fakeItemsListStateTrue}
+    setOpenModal={fakeOpenModal}
+  />
+);
+
 const fakeItemsListState = [
   [
     {
@@ -14,12 +32,14 @@ const fakeItemsListState = [
   ],
   jest.fn(),
 ];
+
 const renderedItemsList = (
   <ShoppingList
     itemsListState={fakeItemsListState}
     setOpenModal={fakeOpenModal}
   />
 );
+
 describe("", () => {
   test("Click on a checkbox and change isCompleted", () => {
     render(renderedItemsList);
@@ -38,16 +58,27 @@ describe("", () => {
     ]);
   });
 
-  test("Should hide items", () => {
-    render(renderedItemsList);
+  test("Should hide checked items", () => {
+    render(renderedCheckedItemsList);
 
     const buttonItemChecked = screen.getByTestId("itemChecked");
-
     fireEvent.click(buttonItemChecked);
 
     const buttonHideItem = screen.getByTestId("hide");
     fireEvent.click(buttonHideItem);
 
     expect(buttonItemChecked).not.toBeInTheDocument();
+  });
+
+  test("Should not hide unChecked items", () => {
+    render(renderedItemsList);
+
+    const buttonItemChecked = screen.getByTestId("itemChecked");
+    fireEvent.click(buttonItemChecked);
+
+    const buttonHideItem = screen.getByTestId("hide");
+    fireEvent.click(buttonHideItem);
+
+    expect(buttonItemChecked).toBeInTheDocument();
   });
 });
