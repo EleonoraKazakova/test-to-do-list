@@ -38,24 +38,26 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
   );
 
   return (
-    <div>
-      <h3 className="shopingList-title">Shopping list</h3>
-      <div className="shopingList-block">
-        <div>
-          <input
-            type="checkbox"
-            name="hide"
-            data-testid="hide"
-            checked={checkedHide}
-            onChange={toggleCheckedHide}
-          />
-          <label key="hide">Hide completed items</label>
+    <div className="shopingList-content">
+      <div>
+        <h3 className="shopingList-title">Shopping list</h3>
+        <div className="shopingList-block">
+          <div>
+            <input
+              type="checkbox"
+              name="hide"
+              data-testid="hide"
+              checked={checkedHide}
+              onChange={toggleCheckedHide}
+            />
+            <label key="hide">Hide selected items</label>
+          </div>
+          <Sorting itemsListState={[itemsList, setItemsList]} />
         </div>
-        <Sorting itemsListState={[itemsList, setItemsList]} />
+        {items}
       </div>
-      {items}
       <button onClick={() => setOpenModal(true)} className="button">
-        Add Item
+        <p className="button-text">Add Item</p>
       </button>
     </div>
   );

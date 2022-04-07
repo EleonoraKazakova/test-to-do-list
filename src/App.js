@@ -13,11 +13,16 @@ export default function App() {
   const storageKey = "todo-list";
 
   useEffect(() => loadData(), []);
-  useEffect(() => saveData(), [itemsList]);
+  useEffect(() => {
+    console.log("saved:");
+    saveData();
+  }, [itemsList]);
 
   function loadData() {
     const data = localStorage.getItem(storageKey);
     const parseData = JSON.parse(data) || [];
+
+    console.log("parseData:", parseData);
 
     setItemsList(parseData);
   }
@@ -25,6 +30,8 @@ export default function App() {
   function saveData() {
     const data = JSON.stringify(itemsList);
     localStorage.setItem(storageKey, data);
+
+    console.log("data:", data);
   }
 
   function createdItem(name, price) {

@@ -4,7 +4,7 @@ import "../styles/base/button.css";
 
 export default function WelcomePage({ setOpenModal, modalState, createdItem }) {
   return (
-    <div>
+    <div className="welcomePage-block">
       <img src={HomeImg} className="welcomePage-logo" />
       <h1 className="welcomePage-title">EIKA Shopping list</h1>
 

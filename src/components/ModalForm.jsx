@@ -33,6 +33,7 @@ export default function ModalForm({ createdItem, modalState }) {
 
   return (
     <form onSubmit={(event) => onSubmit(event)}>
+      <h3 className="modalForm-title">You can add your item</h3>
       <div className="modalForm-items">
         <div className="modalForm-label-block">
           <label className="modalForm-label">
@@ -63,6 +64,7 @@ export default function ModalForm({ createdItem, modalState }) {
             </p>
           ) : null}
         </div>
+
         <button className="button">
           <p className="button-text">Submit</p>
         </button>

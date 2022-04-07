@@ -6,9 +6,9 @@ export default function ModalWindow({ open, children }) {
 
   return ReactDOM.createPortal(
     <section>
-      <div className="modal-overlay" />
-      <div className="modal-styles">
-        <div className="modal-name-tech">{children}</div>
+      <div className="modalWindow-overlay" />
+      <div className="modalWindow-styles">
+        <div className="modalWindow-name-tech">{children}</div>
       </div>
     </section>,
     document.getElementById("portal")

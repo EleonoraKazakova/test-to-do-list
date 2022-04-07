@@ -5,6 +5,14 @@
     justify-content: space-between;
     justify-content: center;
   }
+  .sorting-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 1px solid darkgray;
+    width: 250px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -13,13 +21,13 @@
     flex-direction: row;
     justify-content: space-between;
   }
-}
 
-.sorting-block {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
+  .sorting-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
 }
 
 .sorting-kind {

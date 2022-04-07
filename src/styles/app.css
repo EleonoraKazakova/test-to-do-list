@@ -1,90 +1,6 @@
 @import "./base/swatches.css";
 @import "./base/variables.css";
 
-@media (min-width: 900px) {
-  .app-grid {
-    display: grid;
-    grid-template-columns: auto 850px auto;
-    grid-template-rows: 60px auto 100px;
-    min-height: 100vh;
-  }
-
-  .app-block {
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-  }
-
-  .app-header {
-    grid-column: 1 / 4;
-    grid-row: 1 / 2;
-    background-color: #fbd914;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .app-content {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-  }
-
-  .app-footer {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-    background-color: #0058ab;
-  }
-
-  .app-button {
-    display: flex;
-    width: 100px;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
-    background-color: aliceblue;
-    border-radius: 5px;
-    border: 1px solid darkgray;
-  }
-
-  .app-sort {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 45%;
-  }
-
-  .app-sort-completed {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .app-sort-kind {
-    cursor: pointer;
-  }
-
-  .app-items {
-    display: flex;
-    gap: 10px;
-    justify-content: start;
-    flex-direction: column;
-  }
-
-  .app-footer {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-    background-color: #0058ab;
-    display: flex;
-    justify-content: center;
-    color: white;
-    align-items: center;
-  }
-}
-
 @media (max-width: 899px) {
   .app-grid {
     display: grid;
@@ -115,6 +31,7 @@
     flex-direction: column;
     align-items: center;
     gap: 50px;
+    padding-top: 50px;
   }
 
   .app-footer {
@@ -161,6 +78,91 @@
     gap: 10px;
     justify-content: start;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 900px) {
+  .app-grid {
+    display: grid;
+    grid-template-columns: auto 850px auto;
+    grid-template-rows: 60px auto 100px;
+    min-height: 100vh;
+  }
+
+  .app-block {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .app-header {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    background-color: #fbd914;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .app-content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+  }
+
+  .app-footer {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    background-color: #0058ab;
+  }
+
+  .app-button {
+    display: flex;
+    width: 100px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+  }
+
+  .app-sort {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+  }
+
+  .app-sort-completed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .app-sort-kind {
+    cursor: pointer;
+  }
+
+  .app-items {
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  .app-footer {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    background-color: #0058ab;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
   }
 }
 
