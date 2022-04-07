@@ -40,45 +40,43 @@ const renderedItemsList = (
   />
 );
 
-describe("", () => {
-  test("Click on a checkbox and change isCompleted", () => {
-    render(renderedItemsList);
+test("Click on a checkbox and change isCompleted", () => {
+  render(renderedItemsList);
 
-    const buttonCheckBox = screen.getByTestId("itemChecked");
-    fireEvent.click(buttonCheckBox);
+  const buttonCheckBox = screen.getByTestId("itemChecked");
+  fireEvent.click(buttonCheckBox);
 
-    expect(fakeItemsListState[1].mock.calls.length).toBe(1);
-    expect(fakeItemsListState[1].mock.calls[0][0]).toStrictEqual([
-      {
-        id: 0,
-        name: "apple",
-        price: "5",
-        isCompleted: true,
-      },
-    ]);
-  });
+  expect(fakeItemsListState[1].mock.calls.length).toBe(1);
+  expect(fakeItemsListState[1].mock.calls[0][0]).toStrictEqual([
+    {
+      id: 0,
+      name: "apple",
+      price: "5",
+      isCompleted: true,
+    },
+  ]);
+});
 
-  test("Should hide checked items", () => {
-    render(renderedCheckedItemsList);
+test("Should hide checked items", () => {
+  render(renderedCheckedItemsList);
 
-    const buttonItemChecked = screen.getByTestId("itemChecked");
-    fireEvent.click(buttonItemChecked);
+  const buttonItemChecked = screen.getByTestId("itemChecked");
+  fireEvent.click(buttonItemChecked);
 
-    const buttonHideItem = screen.getByTestId("hide");
-    fireEvent.click(buttonHideItem);
+  const buttonHideItem = screen.getByTestId("hide");
+  fireEvent.click(buttonHideItem);
 
-    expect(buttonItemChecked).not.toBeInTheDocument();
-  });
+  expect(buttonItemChecked).not.toBeInTheDocument();
+});
 
-  test("Should not hide unChecked items", () => {
-    render(renderedItemsList);
+test("Should not hide unChecked items", () => {
+  render(renderedItemsList);
 
-    const buttonItemChecked = screen.getByTestId("itemChecked");
-    fireEvent.click(buttonItemChecked);
+  const buttonItemChecked = screen.getByTestId("itemChecked");
+  fireEvent.click(buttonItemChecked);
 
-    const buttonHideItem = screen.getByTestId("hide");
-    fireEvent.click(buttonHideItem);
+  const buttonHideItem = screen.getByTestId("hide");
+  fireEvent.click(buttonHideItem);
 
-    expect(buttonItemChecked).toBeInTheDocument();
-  });
+  expect(buttonItemChecked).toBeInTheDocument();
 });

@@ -36,7 +36,7 @@ export default function App() {
     };
     setItemsList([...itemsList, newItem]);
   }
-  console.log("itemsList:", itemsList);
+
   return (
     <div className="app-grid">
       <header className="app-header">

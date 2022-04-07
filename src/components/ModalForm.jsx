@@ -8,14 +8,14 @@ export default function ModalForm({ createdItem, modalState }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  const toogleError = (price) => {
+  function ToogleError(price) {
     if (price.match(/^[1-9][0-9]*$/)) {
       setPrice(price);
       setShowErrorMessage(false);
     } else {
       setShowErrorMessage(true);
     }
-  };
+  }
 
   function clearForm() {
     setName("");
@@ -50,7 +50,7 @@ export default function ModalForm({ createdItem, modalState }) {
           <label className="modalForm-label">
             Price
             <input
-              onChange={(e) => toogleError(e.target.value)}
+              onChange={(e) => ToogleError(e.target.value)}
               type="text"
               required
               className="modalForm-text"
