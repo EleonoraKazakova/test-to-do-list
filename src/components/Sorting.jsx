@@ -7,24 +7,24 @@ export default function Sorting({ itemsListState }) {
   const [clickName, setClickName] = useState(false);
   const [clickPrice, setClickPrice] = useState(false);
 
-  const sortItems = () => {
+  function sortName() {
     setItemsList([...itemsList].sort((a, b) => (a.name > b.name ? 1 : -1)));
     setClickName(true);
     setClickPrice(false);
-  };
+  }
 
-  const sortPrice = () => {
+  function sortPrice() {
     setItemsList([...itemsList].sort((a, b) => a.price - b.price));
     setClickPrice(true);
     setClickName(false);
-  };
+  }
 
   return (
     <div className="sorting-completed">
       <div className="sorting-block">
         <p>Sort by:</p>
         <button
-          onClick={sortItems}
+          onClick={sortName}
           className={clickName ? "sorting-bold" : "sorting-kind"}
           data-testid="name"
         >

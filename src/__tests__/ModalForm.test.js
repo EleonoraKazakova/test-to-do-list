@@ -21,7 +21,7 @@ test("Should be able to tipe in input Item row", () => {
   expect(item.value).toBe("apple");
 });
 
-test("Should be able to tipe in input Price row", () => {
+test("Should be able to tipe in input Price row with right price", () => {
   render(renderedForm);
   const price = screen.getByPlaceholderText(/ex.: \$5/i);
   fireEvent.change(price, { target: { value: "6" } });

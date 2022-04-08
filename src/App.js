@@ -14,7 +14,6 @@ export default function App() {
 
   useEffect(() => loadData(), []);
   useEffect(() => {
-    console.log("saved:");
     saveData();
   }, [itemsList]);
 
@@ -22,16 +21,12 @@ export default function App() {
     const data = localStorage.getItem(storageKey);
     const parseData = JSON.parse(data) || [];
 
-    console.log("parseData:", parseData);
-
     setItemsList(parseData);
   }
 
   function saveData() {
     const data = JSON.stringify(itemsList);
     localStorage.setItem(storageKey, data);
-
-    console.log("data:", data);
   }
 
   function createdItem(name, price) {
