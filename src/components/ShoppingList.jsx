@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/shoppingList.css";
 import "../styles/base/button.css";
 import Sorting from "./Sorting";
+import toggleChecked from "../scripts/toogleChecked";
 
 export default function ShoppingList({ itemsListState, setOpenModal }) {
   const [itemsList, setItemsList] = itemsListState;
@@ -9,15 +10,6 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
 
   function toggleCheckedHide() {
     setCheckedHide(!checkedHide);
-  }
-
-  function toggleChecked(item) {
-    const clonedItem = { ...item };
-    clonedItem.isCompleted = !clonedItem.isCompleted;
-    const clonedItemsList = itemsList.map((itemFromList) =>
-      itemFromList.id === item.id ? clonedItem : itemFromList
-    );
-    setItemsList(clonedItemsList);
   }
 
   const items = itemsList.map((item) =>
@@ -28,7 +20,7 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
           name="itemChecked"
           data-testid="itemChecked"
           checked={item.isCompleted}
-          onChange={() => toggleChecked(item)}
+          onChange={() => toggleChecked(item, itemsList, setItemsList)}
         />
         <label>
           {item.name}, ${item.price}

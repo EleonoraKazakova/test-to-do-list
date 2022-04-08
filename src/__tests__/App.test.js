@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import App from "../App";
 
-test("Should be able to add Items", async () => {
+test("Should be able to add Items", () => {
   render(<App />);
 
   const portalRoot = document.createElement("div");
