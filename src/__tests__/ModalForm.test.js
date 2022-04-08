@@ -23,14 +23,14 @@ test("Should be able to tipe in input Item row", () => {
 
 test("Should be able to tipe in input Price row with right price", () => {
   render(renderedForm);
-  const price = screen.getByPlaceholderText(/ex.: \$5/i);
+  const price = screen.queryByPlaceholderText(/ex.: \$5/i);
   fireEvent.change(price, { target: { value: "6" } });
   expect(price.value).toBe("6");
 });
 
 test("Should be not able to tipe in input Price row with wrong price", () => {
   render(renderedForm);
-  const price = screen.getByPlaceholderText(/ex.: \$5/i);
+  const price = screen.queryByPlaceholderText(/ex.: \$5/i);
   fireEvent.change(price, { target: { value: "a6" } });
   expect(price.value).not.toBe();
 });

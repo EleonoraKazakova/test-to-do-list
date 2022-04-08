@@ -9,19 +9,19 @@ test("Should be able to add Items", () => {
   portalRoot.setAttribute("id", "portal");
   document.body.appendChild(portalRoot);
 
-  const buttonAddItem = screen.getByRole("button", { name: /add item/i });
+  const buttonAddItem = screen.queryByRole("button", { name: /add item/i });
   fireEvent.click(buttonAddItem);
 
-  const item = screen.getByPlaceholderText(/ex.: ice cream/i);
-  const price = screen.getByPlaceholderText(/ex.: \$5/i);
+  const item = screen.queryByPlaceholderText(/ex.: ice cream/i);
+  const price = screen.queryByPlaceholderText(/ex.: \$5/i);
 
   fireEvent.change(item, { target: { value: "cherry" } });
   fireEvent.change(price, { target: { value: "8" } });
 
-  const buttonSubmit = screen.getByRole("button", { name: /submit/i });
+  const buttonSubmit = screen.queryByRole("button", { name: /submit/i });
   fireEvent.click(buttonSubmit);
 
-  const itemList = screen.getByText(/cherry, \$8/i);
+  const itemList = screen.queryByText(/cherry, \$8/i);
 
   expect(itemList).toBeInTheDocument();
 });

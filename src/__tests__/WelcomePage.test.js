@@ -4,6 +4,6 @@ import WelcomePage from "../components/WelcomePage";
 
 test("Checking button", () => {
   render(<WelcomePage />);
-  const button = screen.getByRole("button");
+  const button = screen.queryByRole("button");
   expect(button).toBeEnabled();
 });

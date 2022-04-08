@@ -43,7 +43,7 @@ const renderedItemsList = (
 test("Click on a checkbox and change isCompleted", () => {
   render(renderedItemsList);
 
-  const buttonCheckBox = screen.getByTestId("itemChecked");
+  const buttonCheckBox = screen.queryByTestId("itemChecked");
   fireEvent.click(buttonCheckBox);
 
   expect(fakeItemsListState[1].mock.calls.length).toBe(1);
@@ -60,10 +60,10 @@ test("Click on a checkbox and change isCompleted", () => {
 test("Should hide checked items", () => {
   render(renderedCheckedItemsList);
 
-  const buttonItemChecked = screen.getByTestId("itemChecked");
+  const buttonItemChecked = screen.queryByTestId("itemChecked");
   fireEvent.click(buttonItemChecked);
 
-  const buttonHideItem = screen.getByTestId("hide");
+  const buttonHideItem = screen.queryByTestId("hide");
   fireEvent.click(buttonHideItem);
 
   expect(buttonItemChecked).not.toBeInTheDocument();
@@ -72,10 +72,10 @@ test("Should hide checked items", () => {
 test("Should not hide unChecked items", () => {
   render(renderedItemsList);
 
-  const buttonItemChecked = screen.getByTestId("itemChecked");
+  const buttonItemChecked = screen.queryByTestId("itemChecked");
   fireEvent.click(buttonItemChecked);
 
-  const buttonHideItem = screen.getByTestId("hide");
+  const buttonHideItem = screen.queryByTestId("hide");
   fireEvent.click(buttonHideItem);
 
   expect(buttonItemChecked).toBeInTheDocument();

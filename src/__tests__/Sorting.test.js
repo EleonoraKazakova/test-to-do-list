@@ -26,7 +26,7 @@ const renderedItemsList = <Sorting itemsListState={fakeItemsListState} />;
 test("Should sort item by price", () => {
   render(renderedItemsList);
 
-  const buttonPrice = screen.getByTestId("price");
+  const buttonPrice = screen.queryByTestId("price");
   fireEvent.click(buttonPrice);
 
   expect(fakeItemsListState[1].mock.calls[0][0]).toStrictEqual([
@@ -48,7 +48,7 @@ test("Should sort item by price", () => {
 test("Should sort item by name", () => {
   render(renderedItemsList);
 
-  const buttonPrice = screen.getByTestId("name");
+  const buttonPrice = screen.queryByTestId("name");
   fireEvent.click(buttonPrice);
 
   expect(fakeItemsListState[1].mock.calls[0][0]).toStrictEqual([
