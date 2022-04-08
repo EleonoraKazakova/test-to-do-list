@@ -2,7 +2,7 @@ import "../styles/welcomePage.css";
 import HomeImg from "../images/home-img.png";
 import "../styles/base/button.css";
 
-export default function WelcomePage({ setOpenModal, modalState, createdItem }) {
+export default function WelcomePage({ setOpenModal }) {
   return (
     <div className="welcomePage-block">
       <img src={HomeImg} className="welcomePage-logo" />

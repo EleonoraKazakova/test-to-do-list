@@ -20,7 +20,7 @@ export default function Sorting({ itemsListState }) {
   }
 
   return (
-    <div className="sorting-completed">
+    <article className="sorting-completed">
       <div className="sorting-block">
         <p>Sort by:</p>
         <button
@@ -39,6 +39,6 @@ export default function Sorting({ itemsListState }) {
           Price
         </button>
       </div>
-    </div>
+    </article>
   );
 }

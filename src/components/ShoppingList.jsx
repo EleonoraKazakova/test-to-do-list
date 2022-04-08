@@ -30,7 +30,7 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
   );
 
   return (
-    <div className="shopingList-content">
+    <section className="shopingList-content">
       <div>
         <h3 className="shopingList-title">Shopping list</h3>
         <div className="shopingList-block">
@@ -51,6 +51,6 @@ export default function ShoppingList({ itemsListState, setOpenModal }) {
       <button onClick={() => setOpenModal(true)} className="button">
         <p className="button-text">Add Item</p>
       </button>
-    </div>
+    </section>
   );
 }
